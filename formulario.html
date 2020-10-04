@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Solicitação de Ficha Catalográfica</title>
+</head>
+<body>
+    <header>Formulário de Solicitação de Ficha Catalográfica</header>
+    <h1>Biblioteca Agostinho Pestana</h1>
+    <form action= "http://jefferson-vpceh30eb/FichaCatalografica/formulario.php" method="POST">
+        
+       <h5>SOBRENOME: <input type="text" name= "sobrenome"></h5> 
+       <h5>NOME: <input type="text" name= "nome"></h5> 
+       <h5>TÍTULO:  <input type="text" name= "titulo"></h5> 
+       <h5>SUBTÍTULO:  <input type="text" name= "subtitulo"></h5> 
+       <h5>LOCAL : <input type="text" name= "local"></h5> 
+       <h5>ANO: <input type="text" name= "ano"></h5> 
+       <h5>NÚMERO DA ÚLTIMA PÁGINA NUMERADA: <input type="text" name= "pagina"></h5>
+       <h5>SOBRENOME DO ORIENTADOR: <input type="text" name= "sobrenomeorientador"></h5>
+       <h5>NOME DO ORIENTADOR: <input type="text" name= "nomeorientador"></h5>
+         
+        <h5>TIPO DE PUBLICAÇÃO:</h5><select name="tipo">
+        <option value="monografia">Monografia</option>
+        <option value="Projeto de Intervecao">Projeto de Intervenção</option>
+        <option value="Artigo Cientifico">Artigo Científico</option>
+        <option value="Guia Curricular">Guia Curricular</option>
+        <option value="outro">Outro</option>
+        </select>
+       <h5>TITULAÇÃO/ESPECIALIZAÇÃO: <input type="text" name= "titulacao"></h5> 
+       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra1"></h5> 
+       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra2"></h5>
+       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra3"></h5>
+       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra4"></h5>
+       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra5"></h5>
+       <h5>E-MAIL:<input type="text" name= "email"></h5> 
+       <h5>TELEFONE: <input type="text" name= "telefone"></h5> 
+       <h4><button>ENVIAR</button></h4> 
+
+
+    </form>
+</body>
+</html>
