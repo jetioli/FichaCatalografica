@@ -7,21 +7,13 @@
 </head>
 <body>
 
-
-
-
-
 <table border="1" width=738 heigth=443>
-
 
 <tbody>
 
-
 <tr>
 
-
 <td> 
-
 
 <?php
 
@@ -108,29 +100,13 @@ if ($palavra5 != NULL) {
   echo ".I. $sobrenomeorientador, $nomeorientador. II. Escola de Saúde Pública do Estado de Minas Gerais. III. Título";
 
 
-
-
-
-
 ?>
-
-
-
 
 </td>
 </tr>
 </tbody>
 
-
-
-
 </table>
-
-
-
-
-
-
     
 </body>
 </html>
