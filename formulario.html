@@ -1,41 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Solicitação de Ficha Catalográfica</title>
-</head>
-<body>
-    <header>Formulário de Solicitação de Ficha Catalográfica</header>
-    <h1>Biblioteca Agostinho Pestana</h1>
-    <form action= "http://jefferson-vpceh30eb/FichaCatalografica/formulario.php" method="POST">
-        
-       <h5>SOBRENOME: <input type="text" name= "sobrenome"></h5> 
-       <h5>NOME: <input type="text" name= "nome"></h5> 
-       <h5>TÍTULO:  <input type="text" name= "titulo"></h5> 
-       <h5>SUBTÍTULO:  <input type="text" name= "subtitulo"></h5> 
-       <h5>LOCAL : <input type="text" name= "local"></h5> 
-       <h5>ANO: <input type="text" name= "ano"></h5> 
-       <h5>NÚMERO DA ÚLTIMA PÁGINA NUMERADA: <input type="text" name= "pagina"></h5>
-       <h5>SOBRENOME DO ORIENTADOR: <input type="text" name= "sobrenomeorientador"></h5>
-       <h5>NOME DO ORIENTADOR: <input type="text" name= "nomeorientador"></h5>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Formulário de Solicitação de Ficha Catalográfica</title>
+  </head>
+  <body>
+     
+      <div class="mx-auto" style="width: 800px;">
+        <h2>Formulário de Solicitação de Ficha Catalográfica</h2>
+      </div>
+      
+      <form action= "http://jefferson-vpceh30eb/FichaCatalografica/FormularioTeste.php" method="POST">
+          
+        <div class="form-row">
+        <div class= "form-group col-md-3"> <label for="sobrenome">Sobrenome</label> <input type="text" class="form-control" id="sobrenome" name="sobrenome"></div>
+        <div class= "form-group col-md-7"> <label for="nome">Nome</label> <input type="text" class="form-control" id="nome" name="nome"></div>
+        <div class= "form-group col-md-12"> <label for="titulo">Título</label> <input type="text" class="form-control" id="titulo" name="titulo"></div>
+        <div class= "form-group col-md-12"> <label for="subtitulo">Subtítulo</label> <input type="text" class="form-control" id="subtitulo" name="subtitulo"></div>  
+        <div class= "form-group col-md-4"> <label for="pagina">Número de páginas</label> <input type="text" class="form-control" id="pagina" name="pagina"></div>  
+        <div class= "form-group col-md-9"> <label for="local">Local</label> <input type="text" class="form-control" id="local" name="local"></div>       
+        <div class= "form-group col-md-2"> <label for="ano">Ano</label> <input type="text" class="form-control" id="ano" name="ano"></div>            
+       
+        <div class= "form-group col-md-4"> <label for="sobrenomeorientador">Sobrenome do orientador</label> <input type="text" class="form-control" id="sobrenomeorientador" name="sobrenomeorientador"></div>                
+                            
+        <div class= "form-group col-md-8"> <label for="nomeorientador">Nome do orientador</label> <input type="text" class="form-control" id="nomeorientador" name="nomeorientador"></div>                       
+                                  
          
-        <h5>TIPO DE PUBLICAÇÃO:</h5><select name="tipo">
-        <option value="monografia">Monografia</option>
-        <option value="Projeto de Intervecao">Projeto de Intervenção</option>
-        <option value="Artigo Cientifico">Artigo Científico</option>
-        <option value="Guia Curricular">Guia Curricular</option>
-        <option value="outro">Outro</option>
+        <div class= "form-group col-md-6"> <label for="tipo">Tipo de publicação</label> <select name="tipo" class="form-control" id="tipo" name="tipo">
+            <option value="Monografia">Monografia</option>
+            <option value="Projeto de Intervecao">Projeto de Intervenção</option>
+            <option value="Artigo Cientifico">Artigo Científico</option>
+            <option value="Guia Curricular">Guia Curricular</option>
+            <option value="outro">Outro</option>
+
         </select>
-       <h5>TITULAÇÃO/ESPECIALIZAÇÃO: <input type="text" name= "titulacao"></h5> 
-       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra1"></h5> 
-       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra2"></h5>
-       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra3"></h5>
-       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra4"></h5>
-       <h5>PALAVRAS-CHAVE: <input type="text" name= "palavra5"></h5>
-       <h4><button>ENVIAR</button></h4> 
-
-
-    </form>
-</body>
-</html>
+    </div>
+        
+    <div class= "form-group col-md-12"> <label for="palavra1">Palavra-chave</label> <input type="text" class="form-control" id="palavra1" name="palavra1"></div>
+    <div class= "form-group col-md-12"> <label for="palavra2">Palavra-chave</label> <input type="text" class="form-control" id="palavra2" name="palavra2"></div>
+    <div class= "form-group col-md-12"> <label for="palavra3">Palavra-chave</label> <input type="text" class="form-control" id="palavra3" name="palavra3"></div>
+    <div class= "form-group col-md-12"> <label for="palavra4">Palavra-chave</label> <input type="text" class="form-control" id="palavra4" name="palavra4"></div>
+    <div class= "form-group col-md-12"> <label for="palavra5">Palavra-chave</label> <input type="text" class="form-control" id="palavra5" name="palavra5"></div>
+    <button class="btn btn-primary">Gerar Ficha</button>
+        </div>
+  
+  
+      </form>
+  </body>
+  </html>

@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-<table border="1" width=738 heigth=443>
-
-<tbody>
-
-<tr>
-
-<td> 
-
 <?php
+
 
  $nome = $_POST ["nome"]; 
  $sobrenome = $_POST ["sobrenome"]; 
@@ -27,7 +11,6 @@ $pagina = $_POST ["pagina"];
 $sobrenomeorientador = $_POST ["sobrenomeorientador"]; 
 $nomeorientador = $_POST ["nomeorientador"]; 
 $tipo = $_POST ["tipo"]; 
-$monografia = $_POST ["monografia"]; 
 $titulacao = $_POST ["titulacao"];
 $ProjetoDeIntervencao = $_POST ["Projeto de Intervencao"]; 
 $ArtigoCientifico = $_POST ["Artigo Cientifico"]; 
@@ -38,78 +21,37 @@ $palavra3 = $_POST ["palavra3"];
 $palavra4 = $_POST ["palavra4"]; 
 $palavra5 = $_POST ["palavra5"]; 
 
-
-if ($palavra1 != NULL) {
-
-  $um = $palavra1 ;
-};
-if ($palavra2 != NULL) {
-
-  $dois = $palavra2;
-};
-if ($palavra3 != NULL) {
-
-  $tres = $palavra3 ;
-    };
-if ($palavra4 != NULL) {
-
-  $quatro = $palavra4 ;
-};
-if ($palavra5 != NULL) {
-
-  $cinco = $palavra5;
-};
-
-
-
- echo " $sobrenome, $nome. <br/> &nbsp&nbsp&nbsp&nbsp $titulo. /$nome $sobrenome. - Belo Horizonte: ESP-MG, $ano. <br/> &nbsp&nbsp&nbsp&nbsp $pagina f. <br/>&nbsp&nbsp&nbsp&nbsp     Orientador(a): $nomeorientador $sobrenomeorientador.
-  <br/> &nbsp&nbsp&nbsp&nbsp    $tipo (Especialização) em $titulacao. <br/>&nbsp&nbsp&nbsp&nbsp     Inclui bibliografia. <br/> &nbsp&nbsp&nbsp&nbsp"    ;
   
 
-
-  if ($palavra1 != NULL) {
-
-    echo "1."  .$um;
-  };
+require('caixa_de_texto.php');
 
 
-  if ($palavra2 != NULL) {
+$pdf=new PDF_TextBox();
 
-    echo "2."  .$dois;
-  };
-
-
-  if ($palavra3 != NULL) {
-
-    echo "3."  .$tres;
-  };
+$pdf-> GetAName($_POST ["nome"], $_POST ["sobrenome"],$_POST ["titulo"], $_POST ["subtitulo"], $_POST ["local"], $_POST ["ano"], $_POST ["pagina"], $_POST ["sobrenomeorientador"], $_POST ["nomeorientador"],$_POST ["tipo"], $_POST ["monografia"], $_POST ["titulacao"], $_POST ["Projeto de Intervencao"], $_POST ["Artigo Cientifico"],$_POST ["Guia Curricular"],  $_POST ["palavra1"],$_POST ["palavra2"], $_POST ["palavra3"], $_POST ["palavra4"], $_POST ["palavra5"] );
 
 
-  if ($palavra4 != NULL) {
 
-    echo "4." .$quatro;
-  };
-
-
-  if ($palavra5 != NULL) {
-
-    echo "5."  .$cinco;
-  };
+$pdf->AddPage();
+$pdf->SetFont('Arial','',14);
 
 
-  echo ".I. $sobrenomeorientador, $nomeorientador. II. Escola de Saúde Pública do Estado de Minas Gerais. III. Título";
+$pdf->SetXY(80,35);
+$pdf->Palavras($_POST ["palavra1"],$_POST ["palavra2"],$_POST ["palavra3"],$_POST ["palavra4"],$_POST ["palavra5"]);
+$palavras= $pdf->Palavras($_POST ["palavra1"],$_POST ["palavra2"],$_POST ["palavra3"],$_POST ["palavra4"],$_POST ["palavra5"]);
 
+$pdf->drawTextBox("$sobrenome, $nome.
+     $titulo. /$nome $sobrenome. - Belo Horizonte: ESP-MG, $ano. 
+     $pagina f. 
+     Orientador(a): $nomeorientador, $sobrenomeorientador.
+     $tipo (Especialização) em $titulacao. 
+     Inclui bibliografia.
+   
+     $palavras
+    I. $sobrenomeorientador, $nomeorientador. II. Escola de Saúde Pública do Estado de Minas Gerais. III. Título
+     ", 125, 75, 'L', 'M');
+$pdf->Output();
 
-?>
-
-</td>
-</tr>
-</tbody>
-
-</table>
-    
-</body>
-</html>
 
 
 
