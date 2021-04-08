@@ -36,11 +36,11 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','',14);
 
 
-$pdf->SetXY(80,35);
+$pdf->SetXY(45,180);
 $pdf->Palavras($_POST ["palavra1"],$_POST ["palavra2"],$_POST ["palavra3"],$_POST ["palavra4"],$_POST ["palavra5"]);
 $palavras= $pdf->Palavras($_POST ["palavra1"],$_POST ["palavra2"],$_POST ["palavra3"],$_POST ["palavra4"],$_POST ["palavra5"]);
 
-$pdf->drawTextBox("$sobrenome, $nome.
+$pdf->drawTextBox(utf8_decode "$sobrenome, $nome.
      $titulo. /$nome $sobrenome. - Belo Horizonte: ESP-MG, $ano. 
      $pagina f. 
      Orientador(a): $nomeorientador, $sobrenomeorientador.
@@ -49,7 +49,7 @@ $pdf->drawTextBox("$sobrenome, $nome.
    
      $palavras
     I. $sobrenomeorientador, $nomeorientador. II. Escola de Saúde Pública do Estado de Minas Gerais. III. Título
-     ", 125, 75, 'L', 'M');
+     "), 125, 75, 'L', 'M');
 $pdf->Output();
 
 
