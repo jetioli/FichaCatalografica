@@ -23,7 +23,7 @@ $palavra5 = $_POST ["palavra5"];
 
   
 
-require('caixa_de_texto.php');
+require('https://jetioli.github.io/FichaCatalografica/caixa_de_texto.php');
 
 
 $pdf=new PDF_TextBox();
